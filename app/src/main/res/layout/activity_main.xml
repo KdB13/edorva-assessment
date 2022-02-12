@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.edorva.assessment.MainActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <com.edorva.assessment.DrawingView
+            android:id="@+id/drawing_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/options"
+            style="@style/Widget.Drawing.RadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="41dp"
+            android:checkedButton="@id/radio_pencil"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/radio_pencil"
+                style="@style/Widget.Drawing.RadioButton"
+                android:background="@drawable/radio_pencil_bg" />
+
+            <RadioButton
+                android:id="@+id/radio_arrow"
+                style="@style/Widget.Drawing.RadioButton"
+                android:background="@drawable/radio_arrow_bg" />
+
+            <RadioButton
+                android:id="@+id/radio_square"
+                style="@style/Widget.Drawing.RadioButton"
+                android:background="@drawable/radio_square_bg" />
+
+            <RadioButton
+                android:id="@+id/radio_circle"
+                style="@style/Widget.Drawing.RadioButton"
+                android:background="@drawable/radio_circle_bg" />
+
+            <RadioButton
+                android:id="@+id/radio_pallete"
+                style="@style/Widget.Drawing.RadioButton"
+                android:background="@drawable/radio_palette_bg"
+                android:onClick="@{() -> activity.showPalette(true)}" />
+
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/color_palette"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/radio_group_bg"
+            android:orientation="horizontal"
+            android:paddingStart="3dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="3dp"
+            android:paddingBottom="8dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/options"
+            app:layout_constraintTop_toBottomOf="@id/options"
+            tools:visibility="visible">
+
+            <ImageButton
+                android:id="@+id/button_red"
+                style="@style/PaletteButton"
+                android:backgroundTint="@color/palette_red"
+                android:contentDescription="@string/color_red"
+                android:onClick="@{() -> activity.changeColor(@color/palette_red)}"/>
+
+            <ImageButton
+                android:id="@+id/button_blue"
+                style="@style/PaletteButton"
+                android:backgroundTint="@color/palette_blue"
+                android:contentDescription="@string/color_blue"
+                android:onClick="@{() -> activity.changeColor(@color/palette_blue)}"/>
+
+            <ImageButton
+                android:id="@+id/button_green"
+                style="@style/PaletteButton"
+                android:backgroundTint="@color/palette_green"
+                android:contentDescription="@string/color_green"
+                android:onClick="@{() -> activity.changeColor(@color/palette_green)}"/>
+
+            <ImageButton
+                android:id="@+id/button_black"
+                style="@style/PaletteButton"
+                android:backgroundTint="@color/palette_black"
+                android:contentDescription="@string/color_black"
+                android:onClick="@{() -> activity.changeColor(@color/palette_black)}"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

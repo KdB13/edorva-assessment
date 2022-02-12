@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Drawing.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="android:layout_width">34dp</item>
+        <item name="android:layout_height">34dp</item>s
+        <item name="android:layout_marginStart">11dp</item>
+        <item name="android:layout_marginEnd">11dp</item>
+        <item name="android:button">@null</item>
+    </style>
+
+    <style name="Widget.Drawing.RadioGroup" parent="">
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingStart">2dp</item>
+        <item name="android:paddingEnd">2dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/radio_group_bg</item>
+    </style>
+
+    <style name="PaletteButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">28dp</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="android:layout_marginStart">6dp</item>
+        <item name="android:layout_marginEnd">6dp</item>
+        <item name="android:background">@drawable/radio_button_bg</item>
+    </style>
+</resources>

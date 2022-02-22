@@ -5,4 +5,4 @@ Note: The app's UI changes to a black background during **Night Mode** and the d
 
 ## Note:
 
-Sorry for the typo in repository name. It's actually **advora-assessment**.
+Sorry for the typo in repository name. It's actually **edvora-assessment**.
